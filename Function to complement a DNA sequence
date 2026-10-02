@@ -1,0 +1,11 @@
+#See coursera course from Python for Genomic Data Science (Johns Hopkins University)
+
+def complement(dna):
+    "Return the complementary sequence string"
+    basecomplement = {'A':'T','C':'G','G':'C','T':'A','N':'N','a':'t','c':'g','g':'c','t':'a', 'n':'n'}                
+    letters = list(dna)
+    letters = [basecomplement[base] for base in letters]
+    return ''.join(letters)
+
+"Execution"
+complement('tgcccataccaac')
