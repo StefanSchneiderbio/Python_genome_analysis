@@ -1,0 +1,12 @@
+seqs={}
+
+for line in f:
+    #let's discard the newline at the end (if any)
+    line = line.rstrip()
+    #distinquish header from sequence
+    if line[0] == '>': # or line.startswith('>')
+        words = line.split()
+        name=words[0][1:]
+        seqs[name] = ''
+    else :      #sequence, not header
+        seqs[name] = seqs[name] + line
