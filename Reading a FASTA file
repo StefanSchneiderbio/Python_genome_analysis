@@ -1,3 +1,10 @@
+try:
+    f = open("myfile.fa")
+except IOError:
+    print("File my file.fa does not exist!!!")
+
+
+
 seqs={}
 
 for line in f:
