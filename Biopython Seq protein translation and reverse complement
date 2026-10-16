@@ -1,0 +1,21 @@
+
+#protein translation of DNA sequence with biopython, coursera course
+
+from Bio.Seq import Seq
+
+my_seq = Seq("TGGGCCTCATATTTATCCTATATACCATGTTCGTATGGTGGCGCGATGTTCTACGTGAATCCACGTTCGAAGGACATCATACCAAAGTCGTACAATTAGG\
+ACCTCGATATGGTTTTATTCTGTTTATCGTATCGGAGGTTATGTTCTTTTTTGCTCTTTTTCGGGCTTCTTCTCATTCTTCTTTGGCACCTACGGTAGAG")
+
+print(my_seq.translate())
+
+
+
+
+
+#reverse complement
+
+from Bio.Seq import Seq
+
+my_seq = Seq("GATCGATGGGCCTATATAGGATCGAAAATCGC")
+
+print('reverse complement is %s' % my_seq.reverse_complement())
