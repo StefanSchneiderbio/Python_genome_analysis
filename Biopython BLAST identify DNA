@@ -1,0 +1,25 @@
+#Identifying a DNA sequence that aligns with the current DNA provided
+
+file = open("C:\\Users\\") # example of location of the file
+
+sequence_unknown = file.read()
+print(sequence_unknown)
+
+from Bio.Blast import NCBIWWW, NCBIXML
+
+result_handle = NCBIWWW.qblast("blastn", "nt", sequence_unknown)
+
+blast_record = NCBIXML.read(result_handle)
+E_VALUE_THRESH = 0.01 # The E_VALUE_THRESH = 0.01 line means only alignments with an E-value below 0.01 will be printed.
+for alignment in blast_record.alignments:
+    for hsp in alignment.hsps:
+        if hsp.expect < E_VALUE_THRESH:
+            print("Hit:", alignment.title)
+            print("Accession:", alignment.accession)
+            print("Length:", alignment.length)
+            print("E-value:", hsp.expect)
+            print("Identity:", hsp.identities, "/", hsp.align_length)
+            print("Query:", hsp.query)
+            print("Match:", hsp.match)
+            print("Subject:", hsp.sbjct)
+            print("-" * 60)
