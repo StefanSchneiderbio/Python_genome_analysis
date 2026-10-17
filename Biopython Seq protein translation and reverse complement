@@ -18,4 +18,4 @@ from Bio.Seq import Seq
 
 my_seq = Seq("GATCGATGGGCCTATATAGGATCGAAAATCGC")
 
-print('reverse complement is %s' % my_seq.reverse_complement())
+print('reverse complement is %s' % my_seq.reverse_complement()) #let's go
